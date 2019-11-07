@@ -20,18 +20,27 @@
 
 // ----------------EXAMPLE 2
 
-const { Builder } = require("selenium-webdriver");
+
+const { Builder , By } = require("selenium-webdriver");
 const proxy = require("selenium-webdriver/proxy");
-const proxyServer = "172.58.84.244"
+// const ipAddress = "172.58.84.158:8080";
+// .setProxy(proxy.manual({
+//     http: ipAddress,
+//     https: ipAddress
+// })
+// )
+async function example2() {
+    const driver = new Builder()
 
-const driver = new Builder(
-    proxy.manual(
-        {
-          http: proxyServer,
-          https: proxyServer
-        }
-    )
-).forBrowser("chrome").build();
+        .forBrowser("chrome").build();
+    await driver.get("https://instagram.com");
+    await driver.findElement(By.name("emailOrPhone")).sendKeys("mrJackson1232@gmail.com");
+    await driver.findElement(By.name("fullName")).sendKeys("andrew jackson");
+    await driver.findElement(By.name("username")).sendKeys("jckmisterjckxnxnxwkd");
+    await driver.findElement(By.name("password")).sendKeys("dffjg");
 
-driver.get("https://vital-town.herokuapp.com/")
 
+
+    // driver.findElement({id : " "})
+}
+example2()
