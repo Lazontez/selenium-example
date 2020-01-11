@@ -21,7 +21,11 @@
 // ----------------EXAMPLE 2
 
 
-const { Builder , By } = require("selenium-webdriver");
+const { Builder, By, Key, until } = require("selenium-webdriver");
+const chrome = require("selenium-webdriver/chrome");
+
+const options = new chrome.Options({ args: ['--window-size=1280,800', '--auto-open-devtools-for-tabs'] })
+
 const proxy = require("selenium-webdriver/proxy");
 // const ipAddress = "172.58.84.158:8080";
 // .setProxy(proxy.manual({
@@ -31,13 +35,22 @@ const proxy = require("selenium-webdriver/proxy");
 // )
 async function example2() {
     const driver = new Builder()
-
+        .setChromeOptions({ options: options })
         .forBrowser("chrome").build();
-    await driver.get("https://instagram.com");
-    await driver.findElement(By.name("emailOrPhone")).sendKeys("mrJackson1232@gmail.com");
-    await driver.findElement(By.name("fullName")).sendKeys("andrew jackson");
-    await driver.findElement(By.name("username")).sendKeys("jckmisterjckxnxnxwkd");
-    await driver.findElement(By.name("password")).sendKeys("dffjg");
+    await driver.get("http://offerup.com");
+
+    // driver.wait(until.elementLocated(By.name("emailOrPhone"))).then(res => {
+
+    //     driver.findElement(By.name("emailOrPhone")).sendKeys("mfjesnl@gmail.com").then(res => { console.log(res) }).catch(err => { console.log(err) });
+    //     driver.findElement(By.name("fullName")).sendKeys("andrew jackson").then(res => { console.log(res) }).catch(err => { console.log(err) });;
+    //     driver.findElement(By.name("username")).sendKeys("jckmisterjckxnxnxwkd").then(res => { console.log(res) }).catch(err => { console.log(err) });
+    //     driver.findElement(By.name("password")).sendKeys("dffjg").then(res => { console.log(res) }).catch(err => { console.log(err) });
+            
+    // })
+
+
+
+
 
 
 
