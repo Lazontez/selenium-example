@@ -17,7 +17,6 @@
 //     })
 // }
 // example()
-
 // ----------------EXAMPLE 2
 
 
@@ -33,11 +32,12 @@ const proxy = require("selenium-webdriver/proxy");
 //     https: ipAddress
 // })
 // )
+
 async function example2() {
     const driver = new Builder()
         .setChromeOptions({ options: options })
         .forBrowser("chrome").build();
-    await driver.get("http://offerup.com");
+    await driver.get("http://offerup.com" );
 
     // driver.wait(until.elementLocated(By.name("emailOrPhone"))).then(res => {
 
@@ -47,12 +47,6 @@ async function example2() {
     //     driver.findElement(By.name("password")).sendKeys("dffjg").then(res => { console.log(res) }).catch(err => { console.log(err) });
             
     // })
-
-
-
-
-
-
 
     // driver.findElement({id : " "})
 }
