@@ -40,12 +40,12 @@ async function example2() {
     const driver = new Builder()
         .setChromeOptions({ options: options })
         .forBrowser("chrome").build();
-    await driver.get("http://localhost:3000/authentication/signup");
+    await driver.get("http://vital-town.herokuapp.com/authentication/signup");
 
     driver.wait(until.elementLocated(By.id("businessnameInput"))).then(res => {
 
         console.log("Business name input field has been rendered")
-        driver.findElement(By.name("accountUsername")).sendKeys(testWord).then(res => { console.log("Account Username has been entered") }).catch(err => { console.log(err) });
+        driver.findElement(By.name("accountUsername")).sendKeys(testWord).then(res => { console.log("Account Username has been entered ") }).catch(err => { console.log(err) });
         driver.findElement(By.name("accountPw")).sendKeys(testWord).then(res => { console.log("Account password has been entered") }).catch(err => { console.log(err) });
         driver.findElement(By.name("accountPwConfirm")).sendKeys(testWord).then(res => { console.log("Accouny Password was confirmed") })
         driver.findElement(By.id("signUpButton")).sendKeys(Key.ENTER)
