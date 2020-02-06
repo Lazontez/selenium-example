@@ -22,7 +22,7 @@
 
 const { Builder, By, Key, until } = require("selenium-webdriver");
 const chrome = require("selenium-webdriver/chrome");
-const testWord = "jason"
+const testWord =  "kobe"
 
 
 const options = new chrome.Options({ args: ['--window-size=1280,800', '--auto-open-devtools-for-tabs'] })
@@ -57,15 +57,21 @@ async function example2() {
         driver.findElement(By.name("loginPw")).sendKeys(testWord).then(res => { console.log("Login Password password has been entered") }).catch(err => { console.log(err) });
         driver.findElement(By.id("loginBtn")).sendKeys(Key.ENTER)
     })
-    driver.wait(until.elementLocated(By.name("loginPw"))).then(res => {
+    // driver.wait(until.elementLocated(By.name("loginPw"))).then(res => {
 
-        console.log("Login Page Rendered")
-        driver.findElement(By.name("loginName")).sendKeys(testWord).then(res => { console.log("Account Username has been entered") }).catch(err => { console.log(err) });
-        driver.findElement(By.name("loginPw")).sendKeys(testWord).then(res => { console.log("Login Password password has been entered") }).catch(err => { console.log(err) });
-        driver.findElement(By.id("loginBtn")).sendKeys(Key.ENTER)
-    })
+    //     console.log("Login Page Rendered")
+    //     driver.findElement(By.name("loginName")).sendKeys(testWord).then(res => { console.log("Account Username has been entered") }).catch(err => { console.log(err) });
+    //     driver.findElement(By.name("loginPw")).sendKeys(testWord).then(res => { console.log("Login Password password has been entered") }).catch(err => { console.log(err) });
+    //     driver.findElement(By.id("loginBtn")).sendKeys(Key.ENTER)
+    // })
 
 
 }
-example2()
+if(testWord===null){
+    console.error("Test word equals " + typeof(testWord))
+}
+else{
+    example2()
+
+}
 
