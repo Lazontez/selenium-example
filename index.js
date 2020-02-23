@@ -22,7 +22,7 @@
 
 const { Builder, By, Key, until } = require("selenium-webdriver");
 const chrome = require("selenium-webdriver/chrome");
-const testWord =  "kobe"
+const testWord =  "br"
 
 
 const options = new chrome.Options({ args: ['--window-size=1280,800', '--auto-open-devtools-for-tabs'] })
